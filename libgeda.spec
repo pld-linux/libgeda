@@ -1,13 +1,12 @@
 Summary:	Libraries for the gEDA project
 Summary(pl):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	20030901
-Release:	1
+Version:	20040111
+Release:	0.1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	01f973c45b98c75d8d0620f4dd4dc33c
-Patch0:		%{name}-acfix.patch
+# Source0-md5:	e0f644647e16786de1af907cd847d492
 URL:		http://www.geda.seul.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.54
@@ -29,7 +28,7 @@ Elektronicznych GNU.
 
 %package devel
 Summary:	Header files and develpment documentation for libgeda
-Summary(pl):	Pliki nag³ówkowe i dokumetacja do libgeda
+Summary(pl):	Pliki nag³ówkowe i dokumentacja do libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	glib2-devel >= 2.2.0
@@ -40,7 +39,7 @@ Requires:	libgdgeda-devel >= 2.0.15
 Header files and develpment documentation for libgeda.
 
 %description devel -l pl
-Pliki nag³ówkowe i dokumetacja do libgeda.
+Pliki nag³ówkowe i dokumentacja do libgeda.
 
 %package static
 Summary:	Static libgeda library
@@ -56,7 +55,6 @@ Biblioteka statyczna libgeda.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 %{__libtoolize}
