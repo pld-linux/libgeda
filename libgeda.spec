@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	18991ed57e5314e618b3654771c4daa4
 URL:		http://www.geda.seul.org/
 BuildRequires:	guile-devel >= 1.4
 BuildRequires:	XFree86-devel
