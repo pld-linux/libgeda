@@ -16,8 +16,6 @@ BuildRequires:	libgdgeda-devel >= 1.7
 BuildRequires:	libpng-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 GNU Electronic Design Automation library.
