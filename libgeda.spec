@@ -7,12 +7,16 @@ License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	01f973c45b98c75d8d0620f4dd4dc33c
+Patch0:		%{name}-acfix.patch
 URL:		http://www.geda.seul.org/
 BuildRequires:	XFree86-devel
+BuildRequires:	autoconf >= 2.54
+BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.2.0
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	guile-devel >= 1.4
 BuildRequires:	libgdgeda-devel >= 2.0.15
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,14 +56,20 @@ Biblioteka statyczna libgeda.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-LDFLAGS="-L%{_libdir} %{rpmcflags}"; export LDFLAGS
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/gEDA/scheme
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -80,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%dir %{_datadir}/gEDA
+%dir %{_datadir}/gEDA/scheme
 
 %files devel
 %defattr(644,root,root,755)
