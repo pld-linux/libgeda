@@ -12,7 +12,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	gtk+2-devel >= 2:2.2.0
 BuildRequires:	guile-devel >= 1.4
 BuildRequires:	libgdgeda-devel >= 2.0.15
 BuildRequires:	libtool
