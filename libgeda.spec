@@ -5,10 +5,6 @@ Version:	20010304
 Release:	1
 License:	GPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
 URL:		http://www.geda.seul.org/
 BuildRequires:	guile-devel >= 1.4
@@ -34,9 +30,6 @@ Elektronicznych GNU.
 Summary:	Header files and develpment documentation for libgeda
 Summary(pl):	Pliki nag³ówkowe i dokumetacja do libgeda
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -49,9 +42,6 @@ Pliki nag³ówkowe i dokumetacja do libgeda.
 Summary:	Static libgeda library
 Summary(pl):	Biblioteka statyczna libgeda
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
