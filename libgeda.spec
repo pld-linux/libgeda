@@ -1,4 +1,4 @@
-Summary:	libraries for the gEDA project
+Summary:	Libraries for the gEDA project
 Summary(pl):	Biblioteki projektu gEDA
 Name:		libgeda
 Version:	20021103
