@@ -8,15 +8,13 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	01f973c45b98c75d8d0620f4dd4dc33c
 URL:		http://www.geda.seul.org/
-BuildRequires:	guile-devel >= 1.4
 BuildRequires:	XFree86-devel
-BuildRequires:	gtk+-devel >= 1.2.8
-BuildRequires:	glib-devel >= 1.2.8
-BuildRequires:	libstroke-devel >= 0.4
+BuildRequires:	glib2-devel >= 2.2.0
+BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	guile-devel >= 1.4
 BuildRequires:	libgdgeda-devel >= 2.0.15
-BuildRequires:	libpng-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 GNU Electronic Design Automation library.
@@ -30,6 +28,9 @@ Summary:	Header files and develpment documentation for libgeda
 Summary(pl):	Pliki nag³ówkowe i dokumetacja do libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	glib2-devel >= 2.2.0
+Requires:	guile-devel
+Requires:	libgdgeda-devel >= 2.0.15
 
 %description devel
 Header files and develpment documentation for libgeda.
@@ -54,7 +55,7 @@ Biblioteka statyczna libgeda.
 
 %build
 LDFLAGS="-L%{_libdir} %{rpmcflags}"; export LDFLAGS
-%configure 
+%configure
 %{__make}
 
 %install
@@ -63,29 +64,30 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%postun
-/sbin/ldconfig
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%post devel
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun devel
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%{_infodir}/libgedadoc*
-%{_libdir}/pkgconfig/libgeda.pc
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/%{name}
+%{_pkgconfigdir}/libgeda.pc
+%{_infodir}/libgedadoc*
 
 %files static
 %defattr(644,root,root,755)
