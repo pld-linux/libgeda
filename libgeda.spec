@@ -64,7 +64,7 @@ Biblioteka statyczna libgeda.
 %setup -q -n %{name}
 
 %build
-LDFLAGS="-L%{_libdir}"; export LDFLAGS
+LDFLAGS="-L%{_libdir} %{rpmcflags}"; export LDFLAGS
 %configure
 %{__make}
 
