@@ -1,7 +1,7 @@
 Summary:	libraries for the gEDA project
 Summary(pl):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	20010304
+Version:	20021103
 Release:	1
 License:	GPL
 Group:		X11/Libraries
@@ -51,7 +51,7 @@ Static libgeda library.
 Biblioteka statyczna libgeda.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 LDFLAGS="-L%{_libdir} %{rpmcflags}"; export LDFLAGS
@@ -66,8 +66,13 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS BUGS ChangeLog README TODO
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+/sbin/ldconfig
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+/sbin/ldconfig
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -76,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_infodir}/libgedadoc*
 
 %files devel
 %defattr(644,root,root,755)
