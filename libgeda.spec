@@ -1,12 +1,12 @@
 Summary:	Libraries for the gEDA project
 Summary(pl):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	20040111
-Release:	0.1
+Version:	20050313
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e0f644647e16786de1af907cd847d492
+# Source0-md5:	aff7e68dd56f10624ed3891a4d83dbfe
 URL:		http://www.geda.seul.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.54
