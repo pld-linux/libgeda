@@ -31,7 +31,7 @@ Elektronicznych GNU.
 Summary:	Header files and develpment documentation for libgeda
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do libgeda
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
 Requires:	guile-devel
 Requires:	libgdgeda-devel >= 2.0.15
@@ -46,7 +46,7 @@ Pliki nag³ówkowe i dokumentacja do libgeda.
 Summary:	Static libgeda library
 Summary(pl):	Biblioteka statyczna libgeda
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libgeda library.
