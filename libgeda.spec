@@ -1,8 +1,8 @@
 Summary:	Libraries for the gEDA project
 Summary(pl):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	20050820
-Release:	1
+Version:	20061020
+Release:	0.1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
@@ -14,7 +14,6 @@ BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.2.0
 BuildRequires:	gtk+2-devel >= 2:2.2.0
 BuildRequires:	guile-devel >= 1.4
-BuildRequires:	libgdgeda-devel >= 2.0.15
 BuildRequires:	libltdl-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -34,7 +33,6 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
 Requires:	guile-devel
-Requires:	libgdgeda-devel >= 2.0.15
 
 %description devel
 Header files and develpment documentation for libgeda.
@@ -98,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/%{name}
 %{_pkgconfigdir}/libgeda.pc
-%{_infodir}/libgedadoc*
+#%{_infodir}/libgedadoc*
 
 %files static
 %defattr(644,root,root,755)
