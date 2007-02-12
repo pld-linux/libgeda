@@ -1,5 +1,5 @@
 Summary:	Libraries for the gEDA project
-Summary(pl):	Biblioteki projektu gEDA
+Summary(pl.UTF-8):   Biblioteki projektu gEDA
 Name:		libgeda
 Version:	20061020
 Release:	0.1
@@ -22,13 +22,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GNU Electronic Design Automation library.
 
-%description -l pl
-Biblioteka Systemu Zautomatyzowanego Projektowania Uk³adów
+%description -l pl.UTF-8
+Biblioteka Systemu Zautomatyzowanego Projektowania UkÅ‚adÃ³w
 Elektronicznych GNU.
 
 %package devel
 Summary:	Header files and develpment documentation for libgeda
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do libgeda
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja do libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
@@ -37,19 +37,19 @@ Requires:	guile-devel
 %description devel
 Header files and develpment documentation for libgeda.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja do libgeda.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja do libgeda.
 
 %package static
 Summary:	Static libgeda library
-Summary(pl):	Biblioteka statyczna libgeda
+Summary(pl.UTF-8):   Biblioteka statyczna libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libgeda library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libgeda.
 
 %prep
