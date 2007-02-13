@@ -1,5 +1,5 @@
 Summary:	Libraries for the gEDA project
-Summary(pl.UTF-8):   Biblioteki projektu gEDA
+Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
 Version:	20061020
 Release:	0.1
@@ -28,7 +28,7 @@ Elektronicznych GNU.
 
 %package devel
 Summary:	Header files and develpment documentation for libgeda
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do libgeda
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
@@ -42,7 +42,7 @@ Pliki nagłówkowe i dokumentacja do libgeda.
 
 %package static
 Summary:	Static libgeda library
-Summary(pl.UTF-8):   Biblioteka statyczna libgeda
+Summary(pl.UTF-8):	Biblioteka statyczna libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
