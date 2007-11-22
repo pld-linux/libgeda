@@ -1,14 +1,13 @@
 Summary:	Libraries for the gEDA project
 Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	20061020
-Release:	0.1
+Version:	1.2.0
+Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.geda.seul.org/pub/geda/devel/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	3caf1aeee5627706b9abe54f6601a7dc
+Source0:	ftp://ftp.geda.seul.org/pub/geda/release/v1.2/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	43f2b2daabee59ffeae84fe13c10c51d
 URL:		http://www.geda.seul.org/
-BuildRequires:	XFree86-devel
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.2.0
@@ -71,6 +70,9 @@ install -d $RPM_BUILD_ROOT%{_datadir}/gEDA/scheme
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_docdir}/geda-doc/man
+install -d $RPM_BUILD_ROOT%{_docdir}/geda-doc/readmes
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -87,8 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%dir %{_datadir}/gEDA
-%dir %{_datadir}/gEDA/scheme
+%{_datadir}/gEDA
+%{_datadir}/gEDA/scheme
+%{_docdir}/geda-doc
+
 
 %files devel
 %defattr(644,root,root,755)
