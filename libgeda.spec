@@ -3,16 +3,16 @@ Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
 Version:	1.2.0
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/release/v1.2/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	43f2b2daabee59ffeae84fe13c10c51d
 URL:		http://www.geda.seul.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gtk+2-devel >= 2:2.2.0
-BuildRequires:	guile-devel >= 1.4
+BuildRequires:	glib2-devel >= 1:2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	guile-devel >= 5:1.6
 BuildRequires:	libltdl-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -30,8 +30,9 @@ Summary:	Header files and develpment documentation for libgeda
 Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libgeda
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 2.2.0
-Requires:	guile-devel
+Requires:	glib2-devel >= 1:2.2.0
+Requires:	gtk+2-devel >= 2:2.4.0
+Requires:	guile-devel >= 5:1.6
 
 %description devel
 Header files and develpment documentation for libgeda.
@@ -79,29 +80,22 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%post devel	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
-
-%postun devel	-p	/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
-
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog README TODO
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libgeda.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgeda.so.31
 %{_datadir}/gEDA
 %{_datadir}/gEDA/scheme
 %{_docdir}/geda-doc
 
-
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libgeda.so
+%{_libdir}/libgeda.la
 %{_includedir}/%{name}
 %{_pkgconfigdir}/libgeda.pc
-#%{_infodir}/libgedadoc*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgeda.a
