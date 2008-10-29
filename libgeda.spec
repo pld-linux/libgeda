@@ -1,12 +1,12 @@
 Summary:	Libraries for the gEDA project
 Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6d123e1c41b36688a951351b0f8a9764
+# Source0-md5:	16f2e3176eb489838bad57c8728c7388
 URL:		http://www.geda.seul.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -73,6 +73,11 @@ install -d $RPM_BUILD_ROOT%{_datadir}/gEDA/scheme
 
 install -d $RPM_BUILD_ROOT%{_docdir}/geda-doc/man
 install -d $RPM_BUILD_ROOT%{_docdir}/geda-doc/readmes
+
+# on TI i have that locales under different names mv worked fine for me
+mv $RPM_BUILD_ROOT%{_localedir}/{nl_NL,nl}
+mv $RPM_BUILD_ROOT%{_localedir}/{de_DE,de}
+mv $RPM_BUILD_ROOT%{_localedir}/{es_ES,es}
 
 %find_lang %{name}33
 
