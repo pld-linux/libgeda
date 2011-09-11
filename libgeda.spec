@@ -7,7 +7,7 @@ Summary:	Libraries for the gEDA project
 Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
 Version:	1.4.2
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/%{version}/%{name}-%{version}.tar.gz
