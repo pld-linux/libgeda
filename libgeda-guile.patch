@@ -1,0 +1,11 @@
+--- libgeda-1.4.2/src/o_picture.c~	2008-12-21 00:14:16.000000000 +0100
++++ libgeda-1.4.2/src/o_picture.c	2011-09-11 15:58:23.420997128 +0200
+@@ -26,7 +26,7 @@
+ #include <math.h>
+ 
+ #include <gtk/gtk.h>
+-#include <guile/gh.h>
++//#include <guile/gh.h>
+ 
+ #include <gdk/gdk.h>
+ #include <gdk-pixbuf/gdk-pixbuf.h>

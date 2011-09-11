@@ -7,11 +7,12 @@ Summary:	Libraries for the gEDA project
 Summary(pl.UTF-8):	Biblioteki projektu gEDA
 Name:		libgeda
 Version:	1.4.2
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	e22e28cf3684efcf42f6591995fe943b
+Patch0:		%{name}-guile.patch
 URL:		http://www.geda.seul.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -62,6 +63,7 @@ Biblioteka statyczna libgeda.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
